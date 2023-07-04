@@ -1,0 +1,33 @@
+@model User
+@{
+    ViewData["Title"] = $" حذف کاربر {Model.Fullname}";
+}
+
+<div class="py-5 text-center">
+    <h2>
+        @ViewData["Title"]
+    </h2>
+    <a asp-action="Index" class="btn btn-success float-end">بازگشت</a>
+
+</div>
+
+<div class="row g-3">
+    <div class="col-md-12 col-lg-12 order-md-last">
+        <form asp-action="Delete" method="post">
+            <input type="text" hidden asp-for="Id">
+            <div class="col-sm-12">
+                <p>
+                    آیا از
+                    @ViewData["Title"]
+                    مطمئن هستید؟
+                </p>
+            </div>
+
+            <hr class="my-4">
+            <button class="w-100 btn btn-danger btn-lg" type="submit"> حذف</button>
+        </form>
+
+    </div>
+
+
+</div>

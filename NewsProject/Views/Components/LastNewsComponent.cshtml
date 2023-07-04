@@ -1,0 +1,21 @@
+@model IEnumerable<News>
+@foreach (var item in Model)
+{
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading fw-normal lh-1">
+                @item.Name
+            </h2>
+
+
+            <p class="lead">
+                @item.Text
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="@item.Image" alt="Los Angeles" class="d-block w-100">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+}

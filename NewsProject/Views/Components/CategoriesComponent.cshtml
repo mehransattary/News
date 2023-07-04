@@ -1,0 +1,15 @@
+@model IEnumerable<Category>
+<div class="container marketing">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4">
+
+                <h2 class="fw-normal">@item.Name</h2>
+
+            </div>
+        }
+    </div>
+
+    <hr class="featurette-divider">
+</div>

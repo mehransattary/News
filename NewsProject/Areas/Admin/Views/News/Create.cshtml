@@ -1,0 +1,39 @@
+@model News
+@{
+    ViewData["Title"] = " افزودن خبر جدید";
+}
+<div class="py-5 text-center">
+    <h2>
+        @ViewData["Title"]
+    </h2>
+    <a asp-action="Index" class="btn btn-success float-end">بازگشت</a>
+
+</div>
+
+<div class="row g-3">
+    <div class="col-md-12 col-lg-12 order-md-last">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="col-sm-12">
+                <label asp-for="Name" class="form-label"> </label>
+                <input asp-for="Name" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label asp-for="Text" class="form-label"> </label>
+                <textarea asp-for="Text" class="form-control"></textarea>
+            </div>
+            <div class="col-sm-12">
+                <label class="form-label"> تصویر خبر</label>
+                <input type="file" name="file" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label asp-for="CategoryId"  class="form-label">   </label>
+              <select asp-for="CategoryId"  class="form-control" asp-items="@ViewBag.Categories"></select>
+            </div>
+            <hr class="my-4">
+            <button class="w-100 btn btn-primary btn-lg" type="submit"> ذخیره</button>
+        </form>
+
+    </div>
+
+
+</div>

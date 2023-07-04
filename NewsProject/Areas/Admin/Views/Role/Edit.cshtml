@@ -1,0 +1,35 @@
+@model Role
+@{
+    ViewData["Title"] = $" ویرایش نقش {Model.PersianName}";
+}
+
+<div class="py-5 text-center">
+    <h2>
+        @ViewData["Title"]
+    </h2>
+    <a asp-action="Index" class="btn btn-success float-end">بازگشت</a>
+
+</div>
+
+<div class="row g-3">
+    <div class="col-md-12 col-lg-12 order-md-last">
+        <form asp-action="Edit" method="post">
+            <input type="text" hidden asp-for="Id">
+            <input type="text" hidden asp-for="CreateDate">
+            <div class="col-sm-12">
+                <label asp-for="PersianName" class="form-label"> </label>
+                <input asp-for="PersianName" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label asp-for="EnglishName" class="form-label"> </label>
+                <input asp-for="EnglishName" class="form-control">
+            </div>
+
+            <hr class="my-4">
+            <button class="w-100 btn btn-primary btn-lg" type="submit"> ذخیره</button>
+        </form>
+
+    </div>
+
+
+</div>

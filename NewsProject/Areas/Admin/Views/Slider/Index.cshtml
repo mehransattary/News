@@ -1,0 +1,36 @@
+@model IEnumerable<Slider>
+@{
+    ViewData["Title"] = "اسلایدر ها";
+}
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class=" pb-2 mb-0"> @ViewData["Title"]</h6>
+    <a asp-action="Create" class="btn btn-success float-end">جدید</a>
+    <table class="table">
+        <thead>
+            <th>
+                نام 
+            </th>
+            <th>
+                تصویر 
+            </th>
+            <th>
+                عملیات
+            </th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        <img src="@item.Image" alt="" height="120">
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">حذف</a>
+                        <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">ویرایش</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

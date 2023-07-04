@@ -1,0 +1,43 @@
+@model IEnumerable<Slider>
+@{
+    int counter = 0;
+    int counter1 = 0;
+}
+
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+    <div class="carousel-indicators">
+       
+        @foreach (var item in Model)
+        {
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="@counter" class='@(counter==0?"active":"")'
+                aria-current="true" aria-label="Slide 1"></button>
+            counter++;
+        }
+    </div>
+    <div class="carousel-inner">
+        @foreach (var item in Model)
+        {
+            <div class='carousel-item @(counter1==0?"active":"") '>
+                <img src="@item.Image" alt="Los Angeles" class="d-block w-100">
+
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1> @item.Name</h1>
+                        <a class="btn btn-lg btn-primary" href="#"> مشاهده</a>
+                    </div>
+                </div>
+            </div>
+            counter1++;
+        }
+
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">قبلی</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">بعدی</span>
+    </button>
+</div>

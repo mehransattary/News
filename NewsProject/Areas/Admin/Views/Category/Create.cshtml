@@ -1,0 +1,29 @@
+@model Category
+@{
+    ViewData["Title"] = " افزودن دسته جدید";
+}
+<div class="py-5 text-center">
+    <h2>
+        افزودن دسته جدید
+    </h2>
+    <a asp-action="Index" class="btn btn-success float-end">بازگشت</a>
+
+</div>
+
+<div class="row g-3">
+    <div class="col-md-12 col-lg-12 order-md-last">
+        <form asp-action="Create" method="post">
+            <div class="col-sm-12">
+                <label for="firstName" class="form-label">نام دسته </label>
+                <input asp-for="Name" class="form-control" placeholder=" نام دسته....">
+
+            </div>
+
+            <hr class="my-4">
+            <button class="w-100 btn btn-primary btn-lg" type="submit"> ذخیره</button>
+        </form>
+
+    </div>
+
+
+</div>

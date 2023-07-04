@@ -1,0 +1,31 @@
+@model Slider
+@{
+    ViewData["Title"] = " افزودن اسلایدر جدید";
+}
+<div class="py-5 text-center">
+    <h2>
+      @ViewData["Title"] 
+    </h2>
+    <a asp-action="Index" class="btn btn-success float-end">بازگشت</a>
+
+</div>
+
+<div class="row g-3">
+    <div class="col-md-12 col-lg-12 order-md-last">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="col-sm-12">
+                <label asp-for="Name" class="form-label"> </label>
+                <input asp-for="Name" class="form-control">
+            </div>
+            <div class="col-sm-12">
+                <label  class="form-label"> تصویر اسلایدر</label>
+                <input type="file"  name="file"  class="form-control">
+            </div>
+            <hr class="my-4">
+            <button class="w-100 btn btn-primary btn-lg" type="submit"> ذخیره</button>
+        </form>
+
+    </div>
+
+
+</div>
